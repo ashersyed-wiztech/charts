@@ -11,9 +11,9 @@
 ## ref: https://hub.docker.com/r/bitnami/odoo/tags/
 ##
 image:
-  registry: docker.io
-  repository: bitnami/odoo
-  tag: 11.0.20190315
+  registry: registry.cn-shanghai.aliyuncs.com
+  repository: silu-design/odoo
+  tag: latest
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -78,7 +78,7 @@ postgresql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "alicloud-disk-common"
     accessMode: ReadWriteOnce
     size: 8Gi
 
@@ -167,7 +167,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  # storageClass: "-"
+  storageClass: "alicloud-disk-common"
   accessMode: ReadWriteOnce
   size: 8Gi
 
