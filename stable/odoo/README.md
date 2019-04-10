@@ -85,7 +85,9 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `persistence.storageClass`            | PVC Storage Class                                           | `nil` (uses alpha storage class annotation)    |
 | `persistence.accessMode`              | PVC Access Mode                                             | `ReadWriteOnce`                                |
 | `persistence.size`                    | PVC Storage Request                                         | `8Gi`                                          |
-| `postgresql.postgresqlPassword`       | PostgreSQL password                                         | `nil`                                          |
+| `postgresql.postgresqlUsername`       | PostgreSQL username                                         | `odoo`                                         |
+| `postgresql.postgresqlPassword`       | PostgreSQL password                                         | _random 10 character long alphanumeric string_ |
+| `postgresql.postgresqlDatabase`       | PostgreSQL database                                         | `odoo`                                         |
 | `postgresql.persistence.enabled`      | Enable PostgreSQL persistence using PVC                     | `true`                                         |
 | `postgresql.persistence.storageClass` | PVC Storage Class for PostgreSQL volume                     | `nil` (uses alpha storage class annotation)    |
 | `postgresql.persistence.accessMode`   | PVC Access Mode for PostgreSQL volume                       | `ReadWriteOnce`                                |

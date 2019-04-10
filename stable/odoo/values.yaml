@@ -59,6 +59,8 @@ postgresql:
   ## PostgreSQL password
   ## ref: https://hub.docker.com/_/postgres/
   ##
+  postgresqlDatabase: odoo
+  postgresqlUsername: odoo
   # postgresqlPassword:
 
   ## Enable persistence using Persistent Volume Claims
