@@ -1,0 +1,10 @@
+stages:
+  - build
+job:
+  stage: build
+  before_script:
+    - echo $(date +"%Y%m%d%H%M")
+  script:
+    - "bash ./publish-odoo-chart.sh"
+  after_script:
+    - echo $(date +"%Y%m%d%H%M")
