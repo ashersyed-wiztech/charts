@@ -31,14 +31,15 @@ currentVersion=$(echo ${version} | cut -d':' -f 2)
 newVersion=$(echo ${currentVersion} | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{if(length($NF+1)>length($NF))$(NF-1)++; $NF=sprintf("%0*d", length($NF), ($NF+1)%(10^length($NF))); print}')
 
 currentAppVersion=$(echo ${appVersion} | cut -d':' -f 2)
-currentMajorVersion=$(echo ${currentAppVersion} | cut -d':' -f 1)
-currentMinorVersion=$(echo ${currentAppVersion} | cut -d':' -f 2)
+currentMajorVersion=$(echo ${currentAppVersion} | cut -d'.' -f 1)
+currentMinorVersion=$(echo ${currentAppVersion} | cut -d'.' -f 2)
 currentDateTime=$(date +"%Y%m%d%H%M")
 newAppVersion="${currentMajorVersion}.${currentMinorVersion}.${currentDateTime}-${COMMIT_ID}"
 
 sed -i 's/${version}/version: ${newVersion}/' Chart.yaml
 sed -i 's/${appVersion}/appVersion: ${newAppVersion}/' Chart.yaml
 
+helm repo update
 helm package .
 curl -X "DELETE" "http://172.19.3.13:8080/api/charts/odoo/${newVersion}"
 curl -L --data-binary "@odoo-${newVersion}.tgz" http://172.19.3.13:8080/api/charts
