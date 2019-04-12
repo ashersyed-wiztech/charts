@@ -1,7 +1,7 @@
 #!/bin/bash
 
-curl header "PRIVATETOKEN: RRB5Wesw99zMd3sjpxm" 'http://172.19.53.32/api/v4/projects' > projects.json
-curl header "PRIVATETOKEN: RRB5Wesw99zMd3sjpxm" 'http://172.19.53.32/api/v4/projects/1/jobs?scope[]=success' > jobs.json
+curl --header "PRIVATE-TOKEN: RRB-5Wesw99zMd3sjpxm" 'http://172.19.53.32/api/v4/projects' -o projects.json
+curl --header "PRIVATE-TOKEN: RRB-5Wesw99zMd3sjpxm" 'http://172.19.53.32/api/v4/projects/1/jobs?scope[]=success' -o jobs.json
 
 COMMIT_ID=$(cat jobs.json |  jq '.[0].commit.short_id')
 COMMIT_ID=${COMMIT_ID//\"/}
