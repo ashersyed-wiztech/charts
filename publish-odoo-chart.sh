@@ -1,5 +1,9 @@
 #!/bin/bash
 
+helm init --client-only
+helm repo add private http://172.19.3.13:8080
+helm repo update
+
 curl --header "PRIVATE-TOKEN: RRB-5Wesw99zMd3sjpxm" 'http://172.19.53.32/api/v4/projects' -o projects.json
 curl --header "PRIVATE-TOKEN: RRB-5Wesw99zMd3sjpxm" 'http://172.19.53.32/api/v4/projects/1/jobs?scope[]=success' -o jobs.json
 
