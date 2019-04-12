@@ -60,6 +60,7 @@ if [[ "$exists" != "" ]]; then
 fi
 sleep 10
 
+helm repo update
 helm install --name ${RELEASE_NAME} private/odoo
 
 pushd
