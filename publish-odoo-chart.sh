@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 helm init --client-only
 helm repo add private http://172.19.3.13:8080
 helm repo update
@@ -13,6 +15,7 @@ RELEASE_NAME="odoo-${COMMIT_ID}"
 
 # building postgresql for dependency resolution
 pushd stable/postgresql
+rm -rf postgresql-*.tgz
 helm package .
 curl -L --data-binary "@postgresql-3.16.1.tgz" http://172.19.3.13:8080/api/charts
 popd 
@@ -57,3 +60,5 @@ sleep 10
 helm install --name ${RELEASE_NAME} private/odoo
 
 pushd
+
+set +x 
