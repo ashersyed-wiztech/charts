@@ -3,6 +3,14 @@
 set -x
 
 helm init --client-only
+
+mapfile -t repos < <(helm repo list)
+for ((i = 1; i < ${#repos[@]}; ++i)); do 
+    # echo ${repos[$i]}; 
+    repo=$(echo ${repos[$i]} | cut -d' ' -f 1)
+    helm repo remove ${repo}
+done
+
 helm repo add private http://172.19.3.13:8080
 helm repo update
 
@@ -36,23 +44,13 @@ currentMinorVersion=$(echo ${currentAppVersion} | cut -d'.' -f 2)
 currentDateTime=$(date +"%Y%m%d%H%M")
 newAppVersion="${currentMajorVersion}.${currentMinorVersion}.${currentDateTime}-${COMMIT_ID}"
 
-sed -i 's/${version}/version: ${newVersion}/' Chart.yaml
-sed -i 's/${appVersion}/appVersion: ${newAppVersion}/' Chart.yaml
+sed -i "s/${version}/version: ${newVersion}/" Chart.yaml
+sed -i "s/${appVersion}/appVersion: ${newAppVersion}/" Chart.yaml
 
-helm repo update
+helm dependency update
 helm package .
 curl -X "DELETE" "http://172.19.3.13:8080/api/charts/odoo/${newVersion}"
 curl -L --data-binary "@odoo-${newVersion}.tgz" http://172.19.3.13:8080/api/charts
-
-mapfile -t repos < <(helm repo list)
-for ((i = 1; i < ${#repos[@]}; ++i)); do 
-    # echo ${repos[$i]}; 
-    repo=$(echo ${repos[$i]} | cut -d' ' -f 1)
-    helm repo remove ${repo}
-done
-
-helm repo add private http://172.19.3.13:8080
-helm repo update
 
 exists=$(helm ls ${RELEASE_NAME})
 if [[ "$exists" != "" ]]; then
