@@ -5,6 +5,7 @@ job:
   before_script:
     - echo $(date +"%Y%m%d%H%M")
   script:
-    - "bash ./publish-odoo-chart.sh"
+    - if [ -n "${DEPLOY_ODOO}" ]; then bash ./publish-odoo-chart.sh; fi
+    - if [ -n "${DEPLOY_WEBLATE}" ]; then bash ./publish-weblate-chart.sh; fi
   after_script:
     - echo $(date +"%Y%m%d%H%M")

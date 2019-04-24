@@ -1,0 +1,12 @@
+dependencies:
+- name: postgresql
+  version: 3.x.x
+  repository: http://47.101.35.83:8080/
+- name: redis
+  version: 6.4.4
+  repository: http://47.101.35.83:8080/
+  condition: redis.enabled
+- name: memcached
+  version: 2.7.1
+  repository: http://47.101.35.83:8080/
+  condition: memcached.enabled
