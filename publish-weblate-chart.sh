@@ -41,8 +41,8 @@ popd
 pushd stable/redis
 rm -rf redis-*.tgz
 helm package .
-curl -X "DELETE" http://172.19.3.13:8080/api/charts/redis/6.4.4
-curl -L --data-binary "@redis-6.4.4.tgz" http://172.19.3.13:8080/api/charts
+curl -X "DELETE" http://172.19.3.13:8080/api/charts/redis/7.0.0
+curl -L --data-binary "@redis-7.0.0.tgz" http://172.19.3.13:8080/api/charts
 popd 
 
 pushd stable/weblate

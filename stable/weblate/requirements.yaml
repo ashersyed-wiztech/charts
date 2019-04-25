@@ -3,7 +3,7 @@ dependencies:
   version: 3.x.x
   repository: http://172.19.3.13:8080/
 - name: redis
-  version: 6.4.4
+  version: 7.0.0
   repository: http://172.19.3.13:8080/
   condition: redis.enabled
 - name: memcached
