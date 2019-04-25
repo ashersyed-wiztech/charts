@@ -75,7 +75,7 @@ fi
 sleep 10
 
 helm repo update
-# helm install --name ${RELEASE_NAME} private/weblate
+helm install --name ${RELEASE_NAME} private/weblate
 
 pushd
 
