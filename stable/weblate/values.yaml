@@ -84,6 +84,13 @@ postgresql:
     accessMode: ReadWriteOnce
     size: 8Gi
 
+## Memcached chart parameters
+memcached:
+  ## If true, the Memcached chart will be installed as a dependency
+  enabled: false
+  ## Number of Memcached replicas
+  replicaCount: 3
+
 redis:
   persistence:
     enabled: true
