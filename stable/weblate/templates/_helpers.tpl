@@ -24,6 +24,39 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{/*
+Set redis host
+*/}}
+{{- define "weblate.redis.host" -}}
+{{- if .Values.redis.enabled -}}
+{{- template "redis.fullname" . -}}-master
+{{- else -}}
+{{- .Values.redis.host | quote -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Set redis port
+*/}}
+{{- define "weblate.redis.port" -}}
+{{- if .Values.redis.enabled -}}
+    "6379"
+{{- else -}}
+{{- default "6379" .Values.redis.port | quote -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Set redis secret
+*/}}
+{{- define "weblate.redis.secret" -}}
+{{- if .Values.redis.enabled -}}
+{{- template "redis.fullname" . -}}
+{{- else -}}
+{{- template "fullname" . -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "weblate.chart" -}}

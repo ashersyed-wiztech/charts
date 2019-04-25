@@ -26,9 +26,9 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         env:
         - name: REDIS_HOST
-          value: {{ template "weblate.redis.fullname" . }}
+          value: {{ template "weblate.redis.host" . }}
         - name: REDIS_PORT
-          value: 6379
+          value: {{ template "weblate.redis.port" . }}
         - name: POSTGRES_HOST
           value: {{ template "weblate.postgresql.fullname" . }}
         - name: POSTGRES_PORT
