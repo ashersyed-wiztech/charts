@@ -92,6 +92,7 @@ memcached:
   replicaCount: 3
 
 redis:
+  enabled: true
   persistence:
     enabled: true
     storageClass: "alicloud-disk-common"
