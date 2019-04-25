@@ -61,7 +61,7 @@ postgresql:
   ##
   postgresqlDatabase: weblate
   postgresqlUsername: weblate
-  # postgresqlPassword:
+  postgresqlPassword: 2x03OjPQgYDp84L
 
   ## Enable persistence using Persistent Volume Claims
   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
