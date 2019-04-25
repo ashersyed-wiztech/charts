@@ -245,6 +245,29 @@ slave:
     ##
     annotations: {}
     loadBalancerIP:
+  
+  ## Enable persistence using Persistent Volume Claims
+  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+  ##
+  persistence:
+    enabled: true
+    ## The path the volume will be mounted at, useful when using different
+    ## Redis images.
+    path: /data
+    ## The subdirectory of the volume to mount to, useful in dev environments
+    ## and one PV for multiple services.
+    subPath: ""
+    ## redis data Persistent Volume Storage Class
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    storageClass: "alicloud-disk-common"
+    accessModes:
+    - ReadWriteOnce
+    size: 8Gi
 
   ## Redis port
   # port: 6379
