@@ -29,12 +29,12 @@ image:
 ## User of the application
 ## ref: https://github.com/bitnami/bitnami-docker-weblate#configuration
 ##
-weblateUsername: user@example.com
+weblateAdminName: user@example.com
 
 ## Admin email
 ## ref: https://github.com/bitnami/bitnami-docker-weblate#configuration
 ##
-weblateEmail: user@example.com
+weblateAdminEmail: user@example.com
 
 ## Application password
 ## Defaults to a random 10-character alphanumeric string if not set
