@@ -208,7 +208,7 @@ master:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "alicloud-disk-common"
+    # storageClass: "-"
     accessModes:
     - ReadWriteOnce
     size: 8Gi
@@ -380,10 +380,6 @@ volumePermissions:
     # pullSecrets:
     #   - myRegistryKeySecretName
   resources: {}
-  # resources:
-  #   requests:
-  #     memory: 128Mi
-  #     cpu: 100m
 
 ## Redis config file
 ## ref: https://redis.io/topics/config
@@ -408,7 +404,3 @@ sysctlImage:
   #   - myRegistryKeySecretName
   mountHostSys: false
   resources: {}
-  # resources:
-  #   requests:
-  #     memory: 128Mi
-  #     cpu: 100m

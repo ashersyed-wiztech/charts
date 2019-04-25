@@ -166,8 +166,6 @@ spec:
       initContainers:
       - name: init-sysctl
         image: {{ template "redis.sysctl.image" . }}
-        resources:
-{{ toYaml .Values.sysctlImage.resources | indent 10 }}
         {{- if .Values.sysctlImage.mountHostSys }}
         volumeMounts:
         - name: host-sys

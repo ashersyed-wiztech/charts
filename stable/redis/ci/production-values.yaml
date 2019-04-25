@@ -205,7 +205,7 @@ master:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "alicloud-disk-common"
+    # storageClass: "-"
     accessModes:
     - ReadWriteOnce
     size: 8Gi
