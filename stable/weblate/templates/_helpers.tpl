@@ -28,7 +28,7 @@ Set redis host
 */}}
 {{- define "weblate.redis.host" -}}
 {{- if .Values.redis.enabled -}}
-{{- template "redis.fullname" . -}}-master
+{{- printf "%s-%s" .Release.Name "redis" | trunc 63 | trimSuffix "-" -}}-master
 {{- else -}}
 {{- .Values.redis.host | quote -}}
 {{- end -}}
