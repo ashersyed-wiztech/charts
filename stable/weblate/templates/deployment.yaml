@@ -25,18 +25,10 @@ spec:
         image: {{ template "weblate.image" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         env:
-        {{- if .Values.memcached.enabled }}
-        - name: MEMCACHED_HOST
-          value: {{ template "weblate.memcached.fullname" . }}
-        - name: MEMCACHED_PORT
-          value: 11211
-        {{- end }}
-        {{- if .Values.redis.enabled }}
         - name: REDIS_HOST
           value: {{ template "weblate.redis.fullname" . }}
         - name: REDIS_PORT
-          value: {{ template "weblate.redis.redisPort" . }}
-        {{- end }}
+          value: 6379
         - name: POSTGRES_HOST
           value: {{ template "weblate.postgresql.fullname" . }}
         - name: POSTGRES_PORT
