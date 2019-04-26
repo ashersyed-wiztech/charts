@@ -47,6 +47,8 @@ spec:
             secretKeyRef:
               name: {{ template "weblate.postgresql.fullname" . }}
               key: postgresql-password
+        - name: WEBLATE_ADMIN_NAME
+          value: {{ .Values.weblateAdminName | quote }}
         - name: WEBLATE_ADMIN_EMAIL
           value: {{ .Values.weblateAdminEmail | quote }}
         - name: WEBLATE_ADMIN_PASSWORD
