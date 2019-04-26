@@ -61,7 +61,7 @@ smtpPassword: pass
 # smtpProtocol: 
 serverEmail: weblate@example.com
 defaultFromEmail: weblateadmin@example.com
-allowedHosts: *
+allowedHosts: "*"
 
 ##
 ## PostgreSQL chart configuration
