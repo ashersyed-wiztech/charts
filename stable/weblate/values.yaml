@@ -11,9 +11,14 @@
 ## ref: https://hub.docker.com/r/bitnami/weblate/tags/
 ##
 image:
-  registry: registry.cn-shanghai.aliyuncs.com
-  repository: silu-design/weblate
+  registry: docker.io
+  repository: weblate/weblate
   tag: latest
+
+  # registry: registry.cn-shanghai.aliyuncs.com
+  # repository: silu-design/weblate
+  # tag: latest
+
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
