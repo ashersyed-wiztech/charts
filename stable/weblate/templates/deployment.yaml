@@ -47,6 +47,8 @@ spec:
             secretKeyRef:
               name: {{ template "weblate.postgresql.fullname" . }}
               key: postgresql-password
+        - name: WEBLATE_SITE_TITLE
+          value: {{ .Values.weblateSiteTitle | quote }}
         - name: WEBLATE_ADMIN_NAME
           value: {{ .Values.weblateAdminName | quote }}
         - name: WEBLATE_ADMIN_EMAIL
@@ -56,28 +58,42 @@ spec:
             secretKeyRef:
               name: {{ template "weblate.fullname" . }}
               key: weblate-password
+        - name: WEBLATE_REGISTRATION_OPEN
+          value: {{ .Values.weblateRegistrationOpen | quote }}
+        {{- if .Values.allowedHosts }}
+        - name: WEBLATE_ALLOWED_HOSTS
+          value: {{ .Values.allowedHosts | quote }}
+        {{- end }}
         {{- if .Values.smtpHost }}
-        - name: SMTP_HOST
+        - name: WEBLATE_EMAIL_HOST
           value: {{ .Values.smtpHost | quote }}
         {{- end }}
         {{- if .Values.smtpPort }}
-        - name: SMTP_PORT
+        - name: WEBLATE_EMAIL_PORT
           value: {{ .Values.smtpPort | quote }}
         {{- end }}
+        {{- if .Values.smtpProtocol }}
+        - name: SMTP_PROTOCOL
+          value: {{ .Values.smtpProtocol | quote }}
+        {{- end }}
         {{- if .Values.smtpUser }}
-        - name: SMTP_USER
+        - name: WEBLATE_EMAIL_HOST_USER
           value: {{ .Values.smtpUser | quote }}
         {{- end }}
         {{- if .Values.smtpPassword }}
-        - name: SMTP_PASSWORD
+        - name: WEBLATE_EMAIL_HOST_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ template "weblate.fullname" . }}
               key: smtp-password
         {{- end }}
-        {{- if .Values.smtpProtocol }}
-        - name: SMTP_PROTOCOL
-          value: {{ .Values.smtpProtocol | quote }}
+        {{- if .Values.serverEmail }}
+        - name: WEBLATE_SERVER_EMAIL
+          value: {{ .Values.serverEmail | quote }}
+        {{- end }}
+        {{- if .Values.defaultFromEmail }}
+        - name: WEBLATE_DEFAULT_FROM_EMAIL
+          value: {{ .Values.serverEmail | quote }}
         {{- end }}
         ports:
         - name: http

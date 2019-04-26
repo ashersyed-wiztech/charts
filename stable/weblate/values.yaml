@@ -26,6 +26,11 @@ image:
   # pullSecrets:
   #   - myRegistryKeySecretName
 
+## Title of the website
+## ref: https://github.com/bitnami/bitnami-docker-weblate#configuration
+##
+weblateSiteTitle: Weblate
+
 ## User of the application
 ## ref: https://github.com/bitnami/bitnami-docker-weblate#configuration
 ##
@@ -36,6 +41,11 @@ weblateAdminName: user@example.com
 ##
 weblateAdminEmail: user@example.com
 
+## Allow Registration
+## ref: https://github.com/bitnami/bitnami-docker-weblate#configuration
+##
+weblateRegistrationOpen: 1
+
 ## Application password
 ## Defaults to a random 10-character alphanumeric string if not set
 ## ref: https://github.com/bitnami/bitnami-docker-weblate#configuration
@@ -44,11 +54,14 @@ weblateAdminEmail: user@example.com
 
 ## SMTP mail delivery configuration
 ## ref: https://github.com/bitnami/bitnami-docker-weblate/#smtp-configuration
-# smtpHost:
-# smtpPort:
-# smtpUser:
-# smtpPassword:
-# smtpProtocol:
+smtpHost: 127.0.0.1
+smtpPort: 587
+smtpUser: weblate
+smtpPassword: pass
+# smtpProtocol: 
+serverEmail: weblate@example.com
+defaultFromEmail: weblateadmin@example.com
+allowedHosts: *
 
 ##
 ## PostgreSQL chart configuration
