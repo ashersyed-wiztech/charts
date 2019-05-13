@@ -44,8 +44,8 @@ currentMinorVersion=$(echo ${currentAppVersion} | cut -d'.' -f 2)
 currentDateTime=$(date +"%Y%m%d%H%M")
 newAppVersion="${currentMajorVersion}.${currentMinorVersion}.${currentDateTime}-${COMMIT_ID}"
 
-sed -i "s/${version}/version: ${newVersion}/" Chart.yaml
-sed -i "s/${appVersion}/appVersion: ${newAppVersion}/" Chart.yaml
+#sed -i "s/${version}/version: ${newVersion}/" Chart.yaml
+#sed -i "s/${appVersion}/appVersion: ${newAppVersion}/" Chart.yaml
 
 helm dependency update
 helm package .
