@@ -52,10 +52,9 @@ helm package .
 curl -X "DELETE" "http://172.19.3.13:8080/api/charts/odoo/${newVersion}"
 curl -L --data-binary "@odoo-${newVersion}.tgz" http://172.19.3.13:8080/api/charts
 
-#exists=$(helm ls odoo-12)
-#if [[ "$exists" != "" ]]; then
-#    helm del --purge odoo-12    
-#fi
+exists=$(helm ls odoo-12)#if [[ "$exists" != "" ]]; then
+    helm del --purge odoo-12    
+fi
 sleep 10
 
 helm repo update
