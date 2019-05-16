@@ -9,6 +9,8 @@ metadata:
     release: {{ .Release.Name | quote }}
     heritage: {{ .Release.Service | quote }}
 spec:
+  reclaimPolicy:
+    - {{ .Values.persistence.reclaimPolicy | quote }}
   accessModes:
     - {{ .Values.persistence.accessMode | quote }}
   resources:
