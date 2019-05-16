@@ -14,5 +14,5 @@ spec:
     storage: {{ .Values.persistence.pv.capacity.storage | quote }}
   accessMode:
     - {{ .Values.persistence.pv.accessMode | quote }}
-  persistentVolumeReclaimPolicy: .Values.persistence.pv.persistentVolumeReclaimPolicy | quote }}  
+  persistentVolumeReclaimPolicy: {{ .Values.persistence.pv.persistentVolumeReclaimPolicy | quote }}  
 {{- end }}
