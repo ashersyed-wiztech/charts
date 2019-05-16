@@ -172,6 +172,7 @@ persistence:
   storageClass: "alicloud-disk-common"
   accessMode: ReadWriteOnce
   size: 8Gi
+  reclaimPolicy: Retain
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
