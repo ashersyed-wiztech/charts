@@ -172,7 +172,16 @@ persistence:
   storageClass: "alicloud-disk-common"
   accessMode: ReadWriteOnce
   size: 8Gi
-  reclaimPolicy: Retain
+  ReclaimPolicy: Retain
+  volumeName: odoo-12-pv
+  pv:
+    enabled: true
+    storageClassName: "alicloud-disk-common"
+    accessMode: ReadWriteOnce
+    persistentVolumeReclaimPolicy: Retain
+    capacity:
+      storage: 8Gi
+
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
