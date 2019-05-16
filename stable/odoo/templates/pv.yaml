@@ -9,7 +9,7 @@ metadata:
     heritage: {{ .Release.Service | quote }}
     chart: {{ template "odoo.chart" . }}
 spec:
-  storageClassName: {{ .Values.persistence.pv.storageClassName | qoute }}
+  storageClassName: {{ .Values.persistence.pv.storageClassName | quote }}
   capacity:
     storage: {{ .Values.persistence.pv.capacity.storage | quote }}
   accessMode:
