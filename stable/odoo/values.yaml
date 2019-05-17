@@ -170,7 +170,7 @@ persistence:
   ##   GKE, AWS & OpenStack)
   ##
   storageClass: "alicloud-disk-common"
-  accessMode: ReadWriteOnce
+  accessModes: ReadWriteOnce
   size: 8Gi
   ReclaimPolicy: Retain
   volumeName: odoo-12-pv
