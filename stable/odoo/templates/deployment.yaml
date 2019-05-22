@@ -93,7 +93,7 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
         - name: odoo-data
-          mountPath: /bitnami/odoo
+          mountPath: /var/lib/odoo
       volumes:
       - name: odoo-data
       {{- if .Values.persistence.enabled }}
