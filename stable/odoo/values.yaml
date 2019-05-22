@@ -71,7 +71,7 @@ postgresql:
     ## If you want to reuse an existing claim, you can pass the name of the PVC using
     ## the existingClaim variable
     ##
-    # existingClaim: your-claim
+    existingClaim: odoo-data
 
     ## postgresql data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
@@ -83,7 +83,6 @@ postgresql:
     storageClass: "alicloud-disk-common"
     accessMode: ReadWriteOnce
     size: 8Gi
-
 ## Kubernetes svc configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
 ##
