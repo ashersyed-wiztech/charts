@@ -71,7 +71,7 @@ postgresql:
     ## If you want to reuse an existing claim, you can pass the name of the PVC using
     ## the existingClaim variable
     ##
-    existingClaim: odoo-12-odoo
+    existingClaim: odoo-12-data
 
     ## postgresql data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
