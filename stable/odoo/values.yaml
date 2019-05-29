@@ -93,7 +93,7 @@ service:
   ## Kubernetes svc type
   ## For minikube, set this to NodePort, elsewhere use LoadBalancer
   ##
-  type: LoadBalancer
+  type: ClusterIP
   ## Use serviceLoadBalancerIP to request a specific static IP,
   ## otherwise leave blank
   ##
