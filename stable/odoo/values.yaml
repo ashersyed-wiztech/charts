@@ -29,12 +29,12 @@ image:
 ## User of the application
 ## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
-odooUsername: user@example.com
+odooUsername: dev@silu.design
 
 ## Admin email
 ## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
-odooEmail: user@example.com
+odooEmail: dev@silu.design
 
 ## Application password
 ## Defaults to a random 10-character alphanumeric string if not set
