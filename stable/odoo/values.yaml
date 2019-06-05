@@ -40,7 +40,7 @@ odooEmail: dev@silu.design
 ## Defaults to a random 10-character alphanumeric string if not set
 ## ref: https://github.com/bitnami/bitnami-docker-odoo#configuration
 ##
-# odooPassword:
+odooPassword: DO3hq0Pst4si46oq236QXlyZtmfLd59Az9RbTkW86KahbJ0pc6
 
 ## SMTP mail delivery configuration
 ## ref: https://github.com/bitnami/bitnami-docker-odoo/#smtp-configuration
