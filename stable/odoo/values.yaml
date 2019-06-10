@@ -80,7 +80,7 @@ postgresql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "alicloud-disk-common"
+    storageClass: "alicloud-disk-ssd"
     accessMode: ReadWriteOnce
     size: 8Gi
 ## Kubernetes svc configuration
@@ -168,14 +168,14 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "alicloud-disk-common"
+  storageClass: "alicloud-disk-ssd"
   accessModes: ReadWriteOnce
   size: 8Gi
   ReclaimPolicy: Retain
   volumeName: odoo-12-pv
   pv:
     enabled: true
-    storageClassName: "alicloud-disk-common"
+    storageClassName: "alicloud-disk-ssd"
     accessMode: ReadWriteOnce
     persistentVolumeReclaimPolicy: Retain
     capacity:
@@ -188,7 +188,7 @@ persistence:
 resources:
   requests:
     memory: 1024Mi
-    cpu: 600m
+    cpu: 900m
 
 ## Configure extra options for liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes)
