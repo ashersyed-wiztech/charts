@@ -80,8 +80,8 @@ postgresql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "alicloud-disk-common"
-    accessMode: ReadWriteOnce
+    storageClass: "nfs-provisioner-h5sg6"
+    accessMode: ReadWriteMany
     size: 8Gi
 ## Kubernetes svc configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
@@ -168,15 +168,15 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "alicloud-disk-common"
-  accessModes: ReadWriteOnce
+  storageClass: "nfs-provisioner-h5sg6"
+  accessModes: ReadWriteMany
   size: 8Gi
   ReclaimPolicy: Retain
   volumeName: odoo-12-pv
   pv:
     enabled: true
-    storageClassName: "alicloud-disk-common"
-    accessMode: ReadWriteOnce
+    storageClassName: "nfs-provisioner-h5sg6"
+    accessMode: ReadWriteMany
     persistentVolumeReclaimPolicy: Retain
     capacity:
       storage: 8Gi
@@ -187,8 +187,8 @@ persistence:
 ##
 resources:
   requests:
-    memory: 1024Mi
-    cpu: 600m
+    memory: 512Mi
+    cpu: 300m
 
 ## Configure extra options for liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes)
