@@ -80,7 +80,7 @@ postgresql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "openebs-jiva-default"
+    storageClass: "alicloud-disk-common"
     accessMode: ReadWriteOnce
     size: 8Gi
 ## Kubernetes svc configuration
@@ -168,14 +168,14 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "openebs-jiva-default"
+  storageClass: "alicloud-disk-common"
   accessModes: ReadWriteOnce
   size: 8Gi
   ReclaimPolicy: Retain
   volumeName: odoo-12-pv
   pv:
     enabled: true
-    storageClassName: "openebs-jiva-default"
+    storageClassName: "alicloud-disk-common"
     accessMode: ReadWriteOnce
     persistentVolumeReclaimPolicy: Retain
     capacity:
