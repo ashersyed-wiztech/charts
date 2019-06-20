@@ -172,7 +172,7 @@ persistence:
   accessModes: ReadWriteMany
   size: 8Gi
   ReclaimPolicy: Retain
-  volumeName: filestore
+  volumeName: odoo-12-pv
   pv:
     enabled: true
     storageClassName: "nfs-provisioner-h5sg6"
