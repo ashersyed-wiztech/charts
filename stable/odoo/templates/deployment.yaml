@@ -26,14 +26,11 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         env:
         - name: POSTGRESQL_HOST
-          value: {{ template "odoo.postgresql.fullname" . }}
+          value: "pgm-uf6bw75rz8y507sn14790.pg.rds.aliyuncs.com"
         - name: POSTGRESQL_PORT_NUMBER
-          value: "5432"
+          value: "3433"
         - name: POSTGRESQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: {{ template "odoo.postgresql.fullname" . }}
-              key: postgresql-password
+          value : "Ypbbat3Rn&Z!SL8L"
         - name: ODOO_EMAIL
           value: {{ .Values.odooEmail | quote }}
         - name: ODOO_PASSWORD
