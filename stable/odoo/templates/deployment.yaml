@@ -95,7 +95,7 @@ spec:
       - name: odoo-data
       {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ .Values.persistence.existingClaim | default (include "odoo.fullname" .) }}
+          claimName: {{ .Values.persistence.existingClaim | default (include "nfs-vol" .) }}
       {{- else }}
         emptyDir: {}
       {{- end }}
