@@ -170,7 +170,7 @@ persistence:
   ##
   storageClass: "nfs-provisioner-h5sg6"
   accessModes: ReadWriteMany
-  size: 8Gi
+  size: 100Gi
   ReclaimPolicy: Retain
   volumeName: odoo-12-odoo
   pv:
@@ -179,7 +179,7 @@ persistence:
     accessMode: ReadWriteMany
     persistentVolumeReclaimPolicy: Retain
     capacity:
-      storage: 8Gi
+      storage: 100Gi
 
 
 ## Configure resource requests and limits
