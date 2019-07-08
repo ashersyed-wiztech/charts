@@ -187,8 +187,8 @@ persistence:
 ##
 resources:
   requests:
-    memory: 1024Mi
-    cpu: 900m
+    memory: 2048Mi
+    cpu: 1200m
 
 ## Configure extra options for liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes)
