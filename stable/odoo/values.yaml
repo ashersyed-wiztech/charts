@@ -187,7 +187,7 @@ persistence:
 ##
 resources:
   requests:
-    memory: 2048Mi
+    memory: 4096Mi
     cpu: 1200m
 
 ## Configure extra options for liveness and readiness probes
