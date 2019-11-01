@@ -56,6 +56,7 @@ odooPassword: G9fMtpoVetjT892LK9492u8KYIkbu68w6s3wkPx4Z6424F36TA
 ## https://github.com/helm/charts/blob/master/stable/postgresql/values.yaml
 ##
 postgresql:
+  enabled: false
   ## PostgreSQL password
   ## ref: https://hub.docker.com/_/postgres/
   ##
@@ -71,7 +72,7 @@ postgresql:
     ## If you want to reuse an existing claim, you can pass the name of the PVC using
     ## the existingClaim variable
     ##
-    existingClaim: odoo-clone-1-12-data
+    existingClaim: odoo-clone-data
 
     ## postgresql data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
@@ -172,7 +173,7 @@ persistence:
   accessModes: ReadWriteMany
   size: 100Gi
   ReclaimPolicy: Retain
-  volumeName: odoo-clone-1-12-odoo
+  volumeName: odoo-clone-odoo
   pv:
     enabled: true
     storageClassName: "nfs-provisioner-h5sg6"
