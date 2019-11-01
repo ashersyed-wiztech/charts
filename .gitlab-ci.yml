@@ -6,6 +6,7 @@ job:
     - echo $(date +"%Y%m%d%H%M")
   script:
     - if [ -n "${DEPLOY_ODOO}" ]; then bash ./publish-odoo-chart.sh; fi
+    - if [ -n "${DEPLOY_ODOO_CLONE_1}" ]; then bash ./publish-odoo-chart-clone-1.sh; fi
     - if [ -n "${DEPLOY_WEBLATE}" ]; then bash ./publish-weblate-chart.sh; fi
   after_script:
     - echo $(date +"%Y%m%d%H%M")
