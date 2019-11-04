@@ -85,13 +85,13 @@ The following table lists the configurable parameters of the Odoo chart and thei
 | `persistence.storageClass`            | PVC Storage Class                                           | `nil` (uses alpha storage class annotation)    |
 | `persistence.accessMode`              | PVC Access Mode                                             | `ReadWriteOnce`                                |
 | `persistence.size`                    | PVC Storage Request                                         | `8Gi`                                          |
-| `postgresql.postgresqlUsername`       | PostgreSQL username                                         | `odoo`                                         |
+<!-- | `postgresql.postgresqlUsername`       | PostgreSQL username                                         | `odoo`                                         |
 | `postgresql.postgresqlPassword`       | PostgreSQL password                                         | _random 10 character long alphanumeric string_ |
 | `postgresql.postgresqlDatabase`       | PostgreSQL database                                         | `odoo`                                         |
 | `postgresql.persistence.enabled`      | Enable PostgreSQL persistence using PVC                     | `true`                                         |
 | `postgresql.persistence.storageClass` | PVC Storage Class for PostgreSQL volume                     | `nil` (uses alpha storage class annotation)    |
 | `postgresql.persistence.accessMode`   | PVC Access Mode for PostgreSQL volume                       | `ReadWriteOnce`                                |
-| `postgresql.persistence.size`         | PVC Storage Request for PostgreSQL volume                   | `8Gi`                                          |
+| `postgresql.persistence.size`         | PVC Storage Request for PostgreSQL volume                   | `8Gi`                                          | -->
 | `livenessProbe.enabled`               | Enable/disable the liveness probe                           | `true`                                         |
 | `livenessProbe.initialDelaySeconds`   | Delay before liveness probe is initiated                    | 300                                            |
 | `livenessProbe.periodSeconds`         | How often to perform the probe                              | 30                                             |
