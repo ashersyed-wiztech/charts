@@ -1,5 +1,0 @@
-dependencies:
-- name: postgresql
-  condition: false
-  version: 3.x.x
-  repository: http://172.19.3.13:8080/

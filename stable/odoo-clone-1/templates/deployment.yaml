@@ -93,10 +93,10 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
-        - name: odoo-clone-1-data
+        - name: odoo-clone-data
           mountPath: /var/lib/odoo
       volumes:
-      - name: odoo-clone-1-data
+      - name: odoo-clone-data
       {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
           claimName: {{ .Values.persistence.existingClaim | default (include "odoo.fullname" .) }}

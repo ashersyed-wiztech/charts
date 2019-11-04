@@ -22,12 +22,12 @@ COMMIT_ID=${COMMIT_ID//\"/}
 RELEASE_NAME="odoo-${COMMIT_ID}"
 
 # building postgresql for dependency resolution
-pushd stable/postgresql
-rm -rf postgresql-*.tgz
-helm package .
-curl -X "DELETE" http://172.19.3.13:8080/api/charts/postgresql/3.16.1
-curl -L --data-binary "@postgresql-3.16.1.tgz" http://172.19.3.13:8080/api/charts
-popd 
+# pushd stable/postgresql
+# rm -rf postgresql-*.tgz
+# helm package .
+# curl -X "DELETE" http://172.19.3.13:8080/api/charts/postgresql/3.16.1
+# curl -L --data-binary "@postgresql-3.16.1.tgz" http://172.19.3.13:8080/api/charts
+# popd 
 
 pushd stable/odoo
 rm -rf odoo-*.tgz

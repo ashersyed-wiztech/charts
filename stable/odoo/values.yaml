@@ -55,35 +55,37 @@ odooPassword: DO3hq0Pst4si46oq236QXlyZtmfLd59Az9RbTkW86KahbJ0pc6
 ##
 ## https://github.com/helm/charts/blob/master/stable/postgresql/values.yaml
 ##
-postgresql:
-  enabled: false
-  ## PostgreSQL password
-  ## ref: https://hub.docker.com/_/postgres/
-  ##
-  postgresqlDatabase: silu.prod
-  postgresqlUsername: odoo
-  postgresqlPassword: Ypbbat3Rn&Z!SL8L
 
-  ## Enable persistence using Persistent Volume Claims
-  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-  ##
-  persistence:
-    enabled: true
-    ## If you want to reuse an existing claim, you can pass the name of the PVC using
-    ## the existingClaim variable
-    ##
-    existingClaim: odoo-12-data
+# postgresql:
+#   enabled: false
+#   ## PostgreSQL password
+#   ## ref: https://hub.docker.com/_/postgres/
+#   ##
+#   postgresqlDatabase: silu.prod
+#   postgresqlUsername: odoo
+#   postgresqlPassword: Ypbbat3Rn&Z!SL8L
 
-    ## postgresql data Persistent Volume Storage Class
-    ## If defined, storageClassName: <storageClass>
-    ## If set to "-", storageClassName: "", which disables dynamic provisioning
-    ## If undefined (the default) or set to null, no storageClassName spec is
-    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
-    ##   GKE, AWS & OpenStack)
-    ##
-    storageClass: "nfs-provisioner-h5sg6"
-    accessMode: ReadWriteMany
-    size: 8Gi
+#   ## Enable persistence using Persistent Volume Claims
+#   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+#   ##
+#   persistence:
+#     enabled: true
+#     ## If you want to reuse an existing claim, you can pass the name of the PVC using
+#     ## the existingClaim variable
+#     ##
+#     existingClaim: odoo-12-data
+
+#     ## postgresql data Persistent Volume Storage Class
+#     ## If defined, storageClassName: <storageClass>
+#     ## If set to "-", storageClassName: "", which disables dynamic provisioning
+#     ## If undefined (the default) or set to null, no storageClassName spec is
+#     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+#     ##   GKE, AWS & OpenStack)
+#     ##
+#     storageClass: "nfs-provisioner-h5sg6"
+#     accessMode: ReadWriteMany
+#     size: 8Gi
+
 ## Kubernetes svc configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
 ##

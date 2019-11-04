@@ -22,12 +22,12 @@ COMMIT_ID=${COMMIT_ID//\"/}
 RELEASE_NAME="odoo-clone-1-${COMMIT_ID}"
 
 # building postgresql for dependency resolution
-pushd stable/postgresql
-rm -rf postgresql-*.tgz
-helm package .
-curl -X "DELETE" http://172.19.3.13:8080/api/charts/postgresql/3.16.1
-curl -L --data-binary "@postgresql-3.16.1.tgz" http://172.19.3.13:8080/api/charts
-popd 
+# pushd stable/postgresql
+# rm -rf postgresql-*.tgz
+# helm package .
+# curl -X "DELETE" http://172.19.3.13:8080/api/charts/postgresql/3.16.1
+# curl -L --data-binary "@postgresql-3.16.1.tgz" http://172.19.3.13:8080/api/charts
+# popd 
 
 pushd stable/odoo-clone-1
 rm -rf odoo-clone-1-*.tgz
@@ -52,14 +52,14 @@ helm package .
 curl -X "DELETE" "http://172.19.3.13:8080/api/charts/odoo-clone-1/${newVersion}"
 curl -L --data-binary "@odoo-clone-1-${newVersion}.tgz" http://172.19.3.13:8080/api/charts
 
-exists=$(helm ls odoo-clone-1-12)
+exists=$(helm ls odoo-clone-1)
 if [[ "$exists" != "" ]]; then
-    helm del --purge odoo-clone-1-12    
+    helm del --purge odoo-clone-1    
 fi
 sleep 10
 
 helm repo update
-helm install --name odoo-clone-1-12 private/odoo-clone-1
+helm install --name odoo-clone-1 private/odoo-clone-1
 
 pushd
 
