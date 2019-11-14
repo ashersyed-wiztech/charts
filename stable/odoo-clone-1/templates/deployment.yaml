@@ -26,7 +26,7 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         env:
         - name: POSTGRESQL_HOST
-          value: "pgm-uf6bw75rz8y507sn14790.pg.rds.aliyuncs.com"
+          value: "pgm-uf62nztup811j9u3117910.pg.rds.aliyuncs.com"
         - name: POSTGRESQL_PORT_NUMBER
           value: "3433"
         - name: POSTGRESQL_USER
